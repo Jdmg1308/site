@@ -1,0 +1,66 @@
+<div id="some-box">
+    <style>
+        @keyframes color {
+        0%   { background: #0f1115; }
+        20%  { background: #050d3a; }
+        40%  { background: #0c1b2d; }
+        60%  { background: #0c2c5b; }
+        80%  { background: #08192b; }
+        100% { background: #0f1115; }
+      }
+      body {
+        background: #33CCCC; /* Fallback */
+        animation: color 9s infinite linear;
+        text-align: center;
+        padding: 2em;
+        /* overflow: hidden; */
+      }
+
+        article.row {width:100%; max-width:800px; min-height: 210px; margin:0 auto;padding:45px 0;}
+        article.row div {width:49.4%;display:inline-block;position:relative;border:0px solid white;}
+
+        p {
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+        h3 {
+            color: white;
+        }
+
+        /*
+        If we had 3 boxes, we could draw them in order C, A, B by writing div:first-of-type{[...]group:2;} and div:nth-of-type(2) {[...]group:3;}, and so on.
+        */
+    </style>
+    <h1>AR Game</h1>
+  
+      <article class="row" id="idea-one">
+          <div><img src="http://placekitten.com/g/240/210"/></div>
+          <div>
+              <h3>Racism</h3>
+              <p>I made a simple Augmented Reality videogame with Unity and Visual Studio using C#.</p>
+          </div>
+      </article>
+  
+      <article class="row" id="idea-two">
+          <div>
+              <h3>Child labor</h3>
+              <p>For this videogame I designed a maze with probuilder in Unity, I then used the Navmesh tool in order to be able to move the blue sphere automatically towards the green gem at the end of the maze whenever it was clicked with the mouse. Finally, I used Vuforia to put the whole game with the Navmesh into an image target so that it is playable in AR. </a>
+          </div>
+          <div><img src="http://placekitten.com/g/310/200"/></div>
+      </article>
+  
+      <article class="row" id="idea-three">
+          <div><img src="http://placekitten.com/g/250/200"/></div>
+          <div>
+              <h3>Boobs</h3>
+              <p>The sphere is independent from the maze so the game can be played both in the intended way and also by moving the image target to which it is attached.</a>
+          </div>
+      </article>
+
+      <article class="row" id="idea-four">
+        <div><img src="http://placekitten.com/g/250/200"/></div>  https://www.youtube.com/watch?v=bwKv3ZvDxf4
+    </article>
+  </div>

@@ -1,0 +1,29 @@
+/*  This is for styling the main container that holds everything */
+
+#container {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  background: #f7f7f7;
+  animation: color 9s infinite linear;
+}
+
+/* This styles the aside container */
+
+#aSide {
+  height: 600px;
+  width: 600px;
+  position: absolute;
+  top: calc(50% - 250px);
+}
+
+/* This styles the 3D object inserted in the aside container */
+
+#aSide model-viewer {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+}

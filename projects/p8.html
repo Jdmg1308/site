@@ -1,0 +1,63 @@
+<div id="some-box">
+    <style>
+        @keyframes color {
+        0%   { background: #0f1115; }
+        20%  { background: #050d3a; }
+        40%  { background: #0c1b2d; }
+        60%  { background: #0c2c5b; }
+        80%  { background: #08192b; }
+        100% { background: #0f1115; }
+      }
+      body {
+        background: #33CCCC; /* Fallback */
+        animation: color 9s infinite linear;
+        text-align: center;
+        padding: 2em;
+        /* overflow: hidden; */
+      }
+
+        p {
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+        h3 {
+            color: white;
+        }
+
+        /*
+        If we had 3 boxes, we could draw them in order C, A, B by writing div:first-of-type{[...]group:2;} and div:nth-of-type(2) {[...]group:3;}, and so on.
+        */
+    </style>
+    <h1>My War Crimes</h1>
+  
+      <article class="row" id="idea-one">
+          <div><img src="http://placekitten.com/g/240/210"/></div>
+          <div>
+              <h3>Racism</h3>
+              <p>Developed a device that uses coordinated electromagnets to control a ferrofluid using and programming an Arduino.</p>
+          </div>
+      </article>
+  
+      <article class="row" id="idea-two">
+          <div>
+              <h3>Child labor</h3>
+              <p>I had this idea for a high school physics competition that I ended up winning. The amount of time this project took was less than two days, the difficult part was getting the materials.</a>
+          </div>
+          <div><img src="http://placekitten.com/g/310/200"/></div>
+      </article>
+  
+      <article class="row" id="idea-three">
+          <div><img src="http://placekitten.com/g/250/200"/></div>
+          <div>
+              <h3>Boobs</h3>
+              <p>The coding and soldering part is quite simple, as its just three electromagnets connected to a relay controlled by the Arduino.</a>
+          </div>
+      </article>
+
+      <article class="row" id="idea-four">
+        <div><img src="http://placekitten.com/g/250/200"/></div>  https://www.youtube.com/watch?v=bwKv3ZvDxf4
+    </article>
+  </div>
