@@ -1,0 +1,36 @@
+  #image-track > .container1 {
+    min-width: 300px;
+    
+  }
+  .purple, .blue, .orange {
+    position: absolute;
+    width: 42vmin;
+    height: 42vmin;
+    animation: orbit 33s linear infinite;
+  }
+  .purple::before,
+  .blue::before,
+  .orange::before { 
+    cursor: pointer;
+    content: ''; 
+    position: absolute; 
+    width: 8vmin;
+    height: 8vmin;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+  }
+  .purple::before {
+    top: 72%;
+    left: 5%;
+    background-color: purple;
+  }
+  .blue::before {
+    top: 72%;
+    left: 80%;
+    background-color: blue;
+  }
+  .orange::before {
+    left: 42%;
+    top: 3%;
+    background-color: orange;
+  }

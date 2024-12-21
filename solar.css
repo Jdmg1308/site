@@ -1,0 +1,59 @@
+  .container2 {
+    width: 40vmin;
+    height: 40vmin;
+    object-fit: cover;
+    padding-left: 10%;
+  }
+  .sun {
+    position: relative;
+    width: 8em;
+    height: 8em;
+    left: 68%;
+    top: 73%;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+  }
+  .earth, .moon {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent;
+    border-width: 0.1em 0.5em 0 0;
+    border-radius: 50%;
+  }
+  .earth {
+    width: 19em;
+    height: 19em;
+    animation: orbit 36.5s linear infinite;
+  }
+  .moon {
+    width: 5em;
+    height: 5em;
+    left: 72%;
+    animation: orbit 2.7s linear infinite;
+  }
+  .earth::before,
+  .moon::before { 
+    content: ''; 
+    position: absolute; 
+    border-radius: 50%;
+  }
+  .earth::before {
+    top: 1.5em; 
+    right: 1.7em;
+    width: 2.1em;
+    height: 2.1em;
+    background-color: aquamarine;
+  }
+  .moon::before {
+    top: 0.1em; 
+    right: 0em;
+    width: 1em;
+    height: 1em;
+    background-color: silver;
+  }
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
