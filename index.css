@@ -1,190 +1,181 @@
 /* OVERALL */
-@keyframes color {
-  0% {
-    background: #0f1115;
+:root {
+  --bg-color-start: #0f1115;
+  --bg-color-mid1: #050d3a;
+  --bg-color-mid2: #0c1b2d;
+  --bg-color-mid3: #0c2c5b;
+  --bg-color-mid4: #08192b;
+  --text-color: #ffffff;
+  --accent-color: #33cccc;
+}
+
+@keyframes background-animation {
+  0%, 100% {
+    background: var(--bg-color-start);
   }
   20% {
-    background: #050d3a;
+    background: var(--bg-color-mid1);
   }
   40% {
-    background: #0c1b2d;
+    background: var(--bg-color-mid2);
   }
   60% {
-    background: #0c2c5b;
+    background: var(--bg-color-mid3);
   }
   80% {
-    background: #08192b;
+    background: var(--bg-color-mid4);
   }
-  100% {
-    background: #0f1115;
-  }
-}
-body {
-  background: #33cccc; /* Fallback */
-  animation: color 9s infinite linear;
-  text-align: left;
-  padding: 3em;
-  overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* height: 100vh; */
-  padding-left: 5em;
 }
 
-/* NAV */
+body {
+  background: var(--accent-color); /* Fallback */
+  animation: background-animation 9s infinite linear;
+  text-align: left;
+  padding: 3em 5em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+/* NAVIGATION BAR */
 .navbar {
-  background-color: #333; /* Change to your desired background color */
-  padding: 5px;
-  border-radius: 1vmin;
-  color: white; /* Text color */
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 60px; /* Set the desired height */
-  max-width: 210px; /* Set the desired height */
-}
-.home-button {
-  position: relative;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 0.5rem;
+  color: var(--text-color);
   display: flex;
   align-items: center;
+  height: 60px;
+  max-width: 250px;
 }
-.button-image {
-  width: 40px; /* Adjust the width to the size of your button image */
-  height: 40px; /* Adjust the height to the size of your button image */
-  margin-right: 10px; /* Adjust the spacing between the image and name */
+
+.navbar .home-button {
+  display: flex;
+  align-items: center;
 }
-.nav-links-toggle {
-  display: none;
+
+.navbar .button-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
-.name {
+
+.navbar .name {
   font-size: 20px;
   font-weight: bold;
-  color: #ffffff; /* Adjust the color as needed */
-}
-.nav-links {
-  list-style: none;
-  display: flex;
 }
 
-/* BOX */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* MAIN BOX CONTAINER */
 .box {
   display: flex;
+  gap: 1rem;
 }
-.One {
-  padding: 1em;
-  width: 385px;
+
+.box > div {
+  padding: 1rem;
   height: 500px;
+  border-radius: 0.5rem;
 }
-.Two {
-  padding: 1em;
-  width: 450px;
-  height: 500px;
-}
+
+.One,
 .Three {
-  padding: 1em;
   width: 385px;
-  height: 500px;
-  overflow: hidden;
 }
-.row {
-  padding-top: 2%;
+
+.Two {
+  width: 450px;
 }
+
 .spline {
   width: 400px;
   height: 400px;
 }
-#image-track {
-  display: flex;
-  gap: 3vmin;
-}
+
 .image {
   width: 29vmin;
   height: 29vmin;
   border-radius: 10%;
   object-fit: cover;
 }
+
 .text {
-  /* user-drag: none; */
-  /* -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none; */
   color: azure;
 }
+
+/* INFO & PROFILE IMAGE */
 .my_info {
   width: 400px;
-  font-family: "Arial";
+  font-family: Arial, sans-serif;
   font-weight: 200;
   font-size: 21px;
   color: azure;
 }
+
 .bold {
   font-weight: bold;
   font-style: oblique;
 }
+
 .profile-image {
-  border-radius: 3vmin;
+  border-radius: 0.5rem;
   max-width: 300px;
   max-height: 300px;
 }
 
 /* LINKS */
 .css-15e9nnj {
-  float: bottom;
   display: flex;
   justify-content: center;
-  transform: translate(-3%, 100%);
   font-size: 2em;
-  margin-top: var(--chakra-space-6);
-  margin-bottom: var(--chakra-space-6);
-  color: var(--chakra-colors-white);
+  color: var(--text-color);
 }
 
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+  }
+
   .One,
   .Two,
   .Three {
     width: 100%;
   }
-  .box {
-    flex-direction: column;
+
+  .image-track {
+    overflow-x: auto;
+    white-space: nowrap;
   }
+
   body {
     overflow: visible;
-  }
-  .image-track {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-
-    .block {
-      display: inline-block;
-    }
   }
 }
 
 /* ABOUT ME */
-
 article.row {
-  width: 100%;
   max-width: 850px;
-  min-height: 210px;
   margin: 0 auto;
   padding: 45px 0;
 }
+
 article.row div {
-  width: 49.5%;
   display: inline-block;
-  position: relative;
-  border: 0px solid white;
+  width: 49%;
+  vertical-align: top;
 }
 
-a:link,
-a:visited {
-  color: whitesmoke;
+a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
-a:hover,
-a:active {
-  color: teal;
+a:hover {
+  color: var(--accent-color);
 }
