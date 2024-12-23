@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/png" href="data/logo.PNG">
+  <title>Juan Diego Mendez</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="data/logo.PNG" alt="Logo">
+    </a>
+    <span class="site-title">Juan Diego Mendez</span>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="intro">
+      <h1>Hello there!</h1>
+      <h2>My name is Juan Diego</h2>
+      <img class="profile-image" src="data/me.jpg" alt="Juan Diego">
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-cards">
+        <div class="card" onclick="window.location='projects.html'">
+          <img src="data/coding_stock_1.jpg" alt="Projects">
+          <p>Projects</p>
+        </div>
+        <div class="card">
+          <a href="projects/resume.pdf">
+            <img src="data/resume_stock.jpg" alt="Resume">
+            <p>Resume</p>
+          </a>
+        </div>
+        <div class="card" onclick="window.location='about_me.html'">
+          <img src="data/galaxy.jpg" alt="About Me">
+          <p>About Me</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vr-demo">
+      <h2>3D VR Object</h2>
+      <model-viewer src="assets/HTC_Vive_Headset.gltf" alt="VR Headset" auto-rotate camera-controls ar></model-viewer>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="https://github.com/Jdmg1308" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/juan-diego-mendez/" target="_blank">LinkedIn</a>
+    <a href="mailto:juandiegomendezgutierrez@gmail.com">Email</a>
+  </footer>
+</body>
+
+</html>
