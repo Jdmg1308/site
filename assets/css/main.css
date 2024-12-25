@@ -635,6 +635,118 @@ input, select, textarea {
 			font-family: 'Font Awesome 5 Brands';
 		}
 
+	.project-box {
+		padding: 1em;
+		overflow: hidden;
+	}
+
+	.project-box img {
+		-webkit-user-drag: none;
+		pointer-events: none;
+	}
+
+	/*#image-track {
+		user-select: none;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: hidden; /* Ensures images outside the parent are hidden
+		height: 300px; /* Adjust to the desired height of the track */
+		/*position: relative;  For better control of child positioning */
+		/*padding: 20px; /* Adds space around the track content */
+		/*box-sizing: border-box; /* Ensures padding is included in the height */
+	/*}*/
+
+	#image-track {
+		display: flex;
+		/*  overflow-x: scroll; */
+		scroll-behavior: smooth;
+		gap: 15px; /* Adds space between blocks */
+		padding: 20px;
+		cursor: grab; /* Changes cursor to indicate interactivity */
+	}
+
+	#image-track {
+		-ms-overflow-style: none; /* Internet Explorer 10+ */
+		scrollbar-width: none; /* Firefox */
+	}
+	#image-track::-webkit-scrollbar {
+		display: none; /* Safari and Chrome */
+	}
+
+	.project-text {
+		font-size: 14px; /* Reduces font size for better fit */
+		text-align: center;
+		height: 80px; /* Ensures all text fits within the same box size */
+		line-height: 1.2; /* Adjusts line spacing for readability */
+		overflow: hidden; /* Hides overflowing text */
+		text-overflow: ellipsis; /* Adds ellipsis to truncated text */
+		padding: 10px; /* Adds padding around the text */
+		box-sizing: border-box;
+		transition: color 0.3s ease; /* Smooth transition for color change */
+	}
+
+	a {
+		border-bottom: none;
+	}
+
+	a:hover .project-text {
+		color: #00ffe1; /* Change to the desired color */
+	}
+
+	.block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 350px;
+		padding: 5%;
+		/* height: 350px; */
+		margin: 0 15px;
+		flex-shrink: 0;
+		box-sizing: border-box;
+		background-color: #08030d;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		user-select: none; /* Prevents text selection */
+	} 
+	  
+	.image {
+		
+		height: 300px; /* Standardizes image height */
+		width: 300px; /* Standardizes image height */
+		padding-bottom: 10%;
+		object-fit: cover; /* Ensures images are properly scaled */
+		border-radius: 8px; /* Adds rounded corners to the images */
+	}
+
+	.image-row {
+		display: flex;
+		gap: 10px; /* Adjust spacing between images */
+		justify-content: center; /* Center the images horizontally */
+	}
+	
+	.image-row .image {
+		flex: 1; /* Ensures images share equal width */
+		max-width: 50%; /* Prevents images from exceeding half the width of the container */
+	}
+	
+	.image-row .image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* Ensures the images are properly scaled */
+		border-radius: 8px; /* Optional: adds rounded corners */
+	}
+
+	/* Ensure the image inside .myLogo fits within the container */
+	.logo img {
+		max-width: 100%; /* Make sure the image doesn't overflow */
+		max-height: 100%; /* Make sure the image doesn't overflow */
+		object-fit: contain; /* Maintain aspect ratio */
+	}
+
 /* Image */
 
 	.image {
@@ -698,6 +810,7 @@ input, select, textarea {
 			display: block;
 			margin: 2.5rem 0;
 			width: 100%;
+			height: 100%;
 		}
 
 			.image.main img {
@@ -1140,9 +1253,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
