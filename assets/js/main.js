@@ -291,22 +291,16 @@
 		const track = document.getElementById("image-track");
 		let isMouseDown = false;
 
-		track.addEventListener("mousedown", (e) => {
+		const startInteraction = (x) => {
 			isMouseDown = true;
-			track.dataset.mouseDownAt = e.clientX;
-		});
-
-		track.addEventListener("mouseup", () => {
+			track.dataset.mouseDownAt = x;
+		};
+		
+		const endInteraction = () => {
 			isMouseDown = false;
 			track.dataset.mouseDownAt = "0";
 			track.dataset.prevPercentage = track.dataset.percentage;
-		});
-
-		track.addEventListener("mouseleave", () => {
-			isMouseDown = false;
-			track.dataset.mouseDownAt = "0";
-			track.dataset.prevPercentage = track.dataset.percentage;
-		});
+		};
 
 		track.addEventListener("mousemove", (e) => {
 			if (!isMouseDown) return;
@@ -337,7 +331,17 @@
 			}
 		});
 
+		// Mouse Events
+		track.addEventListener("mousedown", (e) => startInteraction(e.clientX));
+		track.addEventListener("mouseup", endInteraction);
+		track.addEventListener("mouseleave", endInteraction);
+		track.addEventListener("mousemove", (e) => moveInteraction(e.clientX));
 
+		// Touch Events
+		track.addEventListener("touchstart", (e) => startInteraction(e.touches[0].clientX));
+		track.addEventListener("touchend", endInteraction);
+		track.addEventListener("touchmove", (e) => moveInteraction(e.touches[0].clientX));
+		
 		// Articles.
 			$main_articles.each(function() {
 
