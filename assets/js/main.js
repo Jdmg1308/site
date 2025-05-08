@@ -286,61 +286,36 @@
 
 			};
 
-		// Image Track
+		const slider = document.getElementById('image-track');
 
-		const track = document.getElementById("image-track");
-		let isMouseDown = false;
+		let isDown = false;
+		let startX;
+		let scrollLeft;
 
-		const startInteraction = (x) => {
-			isMouseDown = true;
-			track.dataset.mouseDownAt = x;
-		};
-		
-		const endInteraction = () => {
-			isMouseDown = false;
-			track.dataset.mouseDownAt = "0";
-			track.dataset.prevPercentage = track.dataset.percentage;
-		};
-
-		track.addEventListener("mousemove", (e) => {
-			if (!isMouseDown) return;
-
-			const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
-			const mouseMax = window.innerWidth / 5; // Allow a third of the screen for scrolling
-
-			const percentage = (mouseDelta / mouseMax) * -100;
-			const nextPercentage = Math.max(
-				Math.min(parseFloat(track.dataset.prevPercentage) + percentage, 0),
-				-800
-			);
-
-			track.dataset.percentage = nextPercentage;
-
-			// Smooth track movement
-			track.animate(
-				{ transform: `translate(${nextPercentage}%, 0%)` },
-				{ duration: 1300, fill: "forwards" }
-			);
-
-			// Smooth image position changes
-			for (const image of track.getElementsByClassName("image")) {
-				image.animate(
-					{ objectPosition: `${100 + nextPercentage / 5}% center` },
-					{ duration: 1200, fill: "forwards" }
-				);
-			}
+		slider.addEventListener('mousedown', (e) => {
+			isDown = true;
+			slider.classList.add('active');
+			startX = e.pageX - slider.offsetLeft;
+			scrollLeft = slider.scrollLeft;
 		});
 
-		// Mouse Events
-		track.addEventListener("mousedown", (e) => startInteraction(e.clientX));
-		track.addEventListener("mouseup", endInteraction);
-		track.addEventListener("mouseleave", endInteraction);
-		track.addEventListener("mousemove", (e) => moveInteraction(e.clientX));
+		slider.addEventListener('mouseleave', () => {
+			isDown = false;
+			slider.classList.remove('active');
+		});
 
-		// Touch Events
-		track.addEventListener("touchstart", (e) => startInteraction(e.touches[0].clientX));
-		track.addEventListener("touchend", endInteraction);
-		track.addEventListener("touchmove", (e) => moveInteraction(e.touches[0].clientX));
+		slider.addEventListener('mouseup', () => {
+			isDown = false;
+			slider.classList.remove('active');
+		});
+
+		slider.addEventListener('mousemove', (e) => {
+			if (!isDown) return;
+			e.preventDefault();
+			const x = e.pageX - slider.offsetLeft;
+			const walk = (x - startX) * 1.5; // Adjust speed multiplier if needed
+			slider.scrollLeft = scrollLeft - walk;
+		});
 		
 		// Articles.
 			$main_articles.each(function() {

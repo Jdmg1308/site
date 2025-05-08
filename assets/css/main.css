@@ -637,42 +637,34 @@ input, select, textarea {
 
 	.project-box {
 		padding: 1em;
-		overflow: hidden;
+		/*overflow: hidden;*/
+		overflow-x: auto;  /* ✅ Enables scrolling */
+  		overflow-y: hidden;
+	}
+
+	.project-box {
+		padding: 1em;
+		overflow-x: auto;
+		overflow-y: hidden;
 	}
 
 	.project-box img {
 		-webkit-user-drag: none;
-		pointer-events: none;
+		pointer-events: auto; /* Keep this so mouse interaction works */
 	}
-
-	/*#image-track {
-		user-select: none;
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: flex-start;
-		align-items: center;
-		overflow: hidden; /* Ensures images outside the parent are hidden
-		height: 300px; /* Adjust to the desired height of the track */
-		/*position: relative;  For better control of child positioning */
-		/*padding: 20px; /* Adds space around the track content */
-		/*box-sizing: border-box; /* Ensures padding is included in the height */
-	/*}*/
 
 	#image-track {
 		display: flex;
-		/*  overflow-x: scroll; */
+		overflow-x: auto;
 		scroll-behavior: smooth;
-		gap: 15px; /* Adds space between blocks */
+		gap: 15px;
 		padding: 20px;
-		cursor: grab; /* Changes cursor to indicate interactivity */
+		cursor: grab;
+		-webkit-overflow-scrolling: touch; /* iOS momentum */
 	}
 
-	#image-track {
-		-ms-overflow-style: none; /* Internet Explorer 10+ */
-		scrollbar-width: none; /* Firefox */
-	}
-	#image-track::-webkit-scrollbar {
-		display: none; /* Safari and Chrome */
+	#image-track.active {
+		cursor: grabbing;
 	}
 
 	.project-text {
